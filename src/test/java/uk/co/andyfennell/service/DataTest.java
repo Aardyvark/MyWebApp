@@ -26,4 +26,5 @@ public class DataTest {
 		DataSimple data = new DataSimple();
 		assertTrue(null != data.getCountryList());
 	}
+	
 }
