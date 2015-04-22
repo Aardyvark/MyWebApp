@@ -162,6 +162,7 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
+          <!-- Without this cannot deploy if webapp already exists -->
           <update>true</update>
           <url>http://localhost:8080/manager/text</url>
           <!-- 
