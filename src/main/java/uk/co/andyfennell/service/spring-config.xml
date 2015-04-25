@@ -67,6 +67,7 @@ class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 </property>
 </bean>
 
+<!-- 
 <bean id="dataSource"
 class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 <property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -74,6 +75,9 @@ class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 <property name="username" value="admin" />
 <property name="password" value="adminmysql" />
 </bean>
-
+-->
+<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+  <property name="jndi" value="java:comp/env/jdbc/test"/>
+</bean>
 
 </beans>

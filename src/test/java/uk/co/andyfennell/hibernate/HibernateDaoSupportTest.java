@@ -12,6 +12,8 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import uk.co.andyfennell.model.hibernate.domain.Event;
 import uk.co.andyfennell.service.EventService;
+import uk.co.andyfennell.service.EventServiceImpl;
+
 import java.net.URL;
 import java.net.URLClassLoader;
 
@@ -37,6 +39,8 @@ public class HibernateDaoSupportTest {
         System.out.println("2");        
 
         EventService eventService = (EventService) context.getBean("eventService");
+        
+        System.out.println("2.1");
         
         Event event = new Event();
         event.setTitle("Event DaoSupport");

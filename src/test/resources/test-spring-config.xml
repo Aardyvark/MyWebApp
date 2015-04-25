@@ -39,7 +39,7 @@
 
 
 <bean id="eventService"
-class="uk.co.andyfennell.service.EventService">
+class="uk.co.andyfennell.service.EventServiceImpl">
 <property name="eventDao" ref="eventDao" />
 </bean>
 
@@ -77,6 +77,5 @@ class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 <property name="username" value="admin" />
 <property name="password" value="adminmysql" />
 </bean>
-
 
 </beans>
