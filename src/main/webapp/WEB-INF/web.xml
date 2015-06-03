@@ -6,6 +6,11 @@
 
   <display-name>Archetype Created Web Application</display-name>
 
+  <!-- Put this first so gets called last when webapp stops -->
+  <listener>
+    <listener-class>uk.co.andyfennell.listener.DriverListener</listener-class>
+  </listener>
+
   <!-- The root application context -->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -32,4 +37,16 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   
+  <env-entry>
+    <env-entry-name>logback/context-name</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value>kenobi</env-entry-value>
+  </env-entry>
+  
+  <env-entry>
+    <env-entry-name>logback/configuration-resource</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value>mywebapp-logback.xml</env-entry-value>
+  </env-entry>
+    
 </web-app>

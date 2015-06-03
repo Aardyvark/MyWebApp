@@ -3,10 +3,11 @@ package uk.co.andyfennell.hibernate.util;
 import java.io.File;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+//import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
 
 public class HibernateUtil {
 
@@ -24,8 +25,14 @@ public class HibernateUtil {
             configuration.configure("eventtest-hibernate.cfg.xml");
   
             // Create ServiceRegistry and populate it with the configuration settings
+            
+            // Hibernate 4.0, 4.1, 4.2
             ServiceRegistry serviceRegistry =
-                    new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+                    new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
+            
+            // Hibernate 4.3
+            //ServiceRegistry serviceRegistry =
+            //        new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
             
             SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry); 
             

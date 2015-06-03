@@ -21,7 +21,7 @@
 
   <!-- Wire up controllers in spring-servlet.xml -->
   <!-- or use annotations instead e.g. @Autowired -->
-  <!-- Don't mix component-scan with bean configuration -->
+  <!-- Don't mix component-scan with xml bean configuration -->
 <!--   
   <bean id="applicationController" class="uk.co.andyfennell.controller.ApplicationController">
     <property name="dataService" ref="dataSimple"/>

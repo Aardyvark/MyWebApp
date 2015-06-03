@@ -14,19 +14,56 @@
     <spring.version>4.1.5.RELEASE</spring.version>
     <aspectj.version>1.8.5</aspectj.version>
     <hibernate.version>4.3.8.Final</hibernate.version>
+    <!-- <hibernate.version>4.1.12.Final</hibernate.version> -->    
     <jstl.version>1.2</jstl.version>
     <junit.version>4.11</junit.version>
 		<logback.version>1.0.13</logback.version>
     <jcl-over-slf4j.version>1.7.5</jcl-over-slf4j.version>
     <mysql.version>5.1.35</mysql.version>
+    <hsqldb.version>2.2.9</hsqldb.version>
   </properties>
 
   <dependencies>
+  
+  <!--
+    <dependency>
+      <groupId>org.apache.openejb</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>6.0-6</version>
+      <scope>compile</scope>
+    </dependency>
+  -->
+<!-- 
+    <dependency>
+    	<groupId>javax.servlet</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>2.0</version>
+        <scope>provided</scope>
+    </dependency>
+-->
+
+<!-- 
+    <dependency>
+      <groupId>javax.servlet</groupId>
+        <artifactId>javax-servlet-api</artifactId>
+        <version>3.1.0</version>
+        <scope>provided</scope>
+    </dependency>
+-->    
+  
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+       <version>7.0</version>
+       <scope>provided</scope>
+    </dependency>  
+  
     <!-- Unit Test -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
+      <scope>test</scope>
     </dependency>
  
     <!-- Spring Core -->
@@ -77,11 +114,19 @@
       <artifactId>jcl-over-slf4j</artifactId>
       <version>${jcl-over-slf4j.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${jcl-over-slf4j.version}</version>
+      <scope>provided</scope> 
+    </dependency>
  
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>${logback.version}</version>
+      <!-- <scope>provided</scope> -->      
     </dependency>
 
     <!-- jstl -->
@@ -96,6 +141,7 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>${mysql.version}</version>
+      <scope>provided</scope>
     </dependency> 
  
     <!-- Hibernate -->
@@ -104,6 +150,31 @@
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
       <version>${hibernate.version}</version>
+    </dependency>
+
+<dependency>
+  <groupId>com.mchange</groupId>
+  <artifactId>c3p0</artifactId>
+  <version>0.9.5</version>
+</dependency>
+
+   <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-c3p0</artifactId>
+      <version>${hibernate.version}</version>
+      <exclusions>
+        <exclusion>
+  <groupId>c3p0</groupId>
+  <artifactId>c3p0</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <version>${hsqldb.version}</version>
+      <scope>test</scope>
     </dependency>
 
 <!-- 
