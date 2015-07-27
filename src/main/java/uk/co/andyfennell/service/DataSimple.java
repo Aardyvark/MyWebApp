@@ -13,7 +13,7 @@ public class DataSimple implements DataService {
 		
 		countries[0] = "England";
 		countries[1] = "Scotland";
-		countries[2] = "Wales";
+		countries[2] = "Walesxxx";
 		
 		return countries;
 	}
